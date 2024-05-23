@@ -37,6 +37,8 @@ public class ArbolBinario {
                     break;
                 case 4:
                     System.out.println("Saliendo...");
+                    Archivo archivo=new Archivo();
+                    archivo.escribirInformacion(raiz);
                     break;
                 default:
                     System.out.println("\nSeleccione una opcion con su respectivo indice. \n");
