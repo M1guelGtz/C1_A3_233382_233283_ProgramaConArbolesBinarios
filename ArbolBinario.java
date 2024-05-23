@@ -12,7 +12,8 @@ public class ArbolBinario {
         Scanner scanner = new Scanner(System.in);
         Nodo raiz = null;
         do {
-            System.out.println("1. Agregar producto\n2. Actualizar cantidad de producto\n3. Imprimir recorrido\n4. Salir");
+            System.out.println("\n----------------Menu--------------\n");
+            System.out.println("1. Agregar producto\n2. Actualizar cantidad de producto\n3. Ver lista de Productos\n4. Salir");
             System.out.print("eleccion:");
             opc = decidir();
             switch (opc) {
@@ -27,12 +28,12 @@ public class ArbolBinario {
                         System.out.println("El árbol está vacío.");
                     } else {
                         Recorrido r = new Recorrido();
-                        System.out.println("Preorden");
+                        System.out.println("\n---------------Productos-------------\n");
                         r.preorden(raiz);
-                        System.out.println("Inorden");
+                        /*System.out.println("Inorden");
                         r.inorden(raiz);
                         System.out.println("Postorden");
-                        r.postorden(raiz);
+                        r.postorden(raiz);*/
                     }
                     break;
                 case 4:
@@ -47,17 +48,18 @@ public class ArbolBinario {
     public  Nodo agregarProducto(Nodo raiz) {
         int id, valor=0;
         Scanner scanner = new Scanner(System.in);
+        System.out.println("\n-------Ingrese los datos del Producto---------\n");
         do {
             if (valor>0) {
                 System.out.println("debe ser un identificador de 3 digitos");
             }
             valor++;
-            System.out.print("Ingrese el ID del producto:");
+            System.out.print("ID del producto:");
             id = decidir();
         } while (id < 100 || id > 999);
-        System.out.print("Ingrese el nombre del producto: ");
+        System.out.print("Nombre del producto: ");
         String nombre = scanner.nextLine();
-        System.out.print("Ingrese piezas a añadir de" + nombre +  ": ");
+        System.out.print("Piezas a añadir de" + nombre +  ": ");
         int cantidad = decidir();
         System.out.print("Ingrese el precio para " + nombre +  ": ");
         float precio = scanner.nextFloat();
