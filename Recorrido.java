@@ -36,8 +36,6 @@ public class Recorrido {
                     nodo.getDato().setCantidad( nodo.getDato().getCantidad() + cantidad); 
                 }
                 cantidad = 1;
-            }else{
-                System.out.println("Id unico");
             }
             añadirPiezas(nodo.getIzq(), id);
             añadirPiezas(nodo.getDer(), id);

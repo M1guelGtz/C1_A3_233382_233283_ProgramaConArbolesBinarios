@@ -1,0 +1,1 @@
+Id: 111	  Nombre: papel	 en existencia: 200 piezas 	  Precio: $90.0
