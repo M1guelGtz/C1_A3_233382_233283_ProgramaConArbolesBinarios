@@ -11,6 +11,7 @@ public class ArbolBinario {
         int opc;
         Scanner scanner = new Scanner(System.in);
         Nodo raiz = null;
+        Recorrido r = new Recorrido();
         do {
             System.out.println("\n----------------Menu--------------\n");
             System.out.println("1. Agregar producto\n2. Actualizar cantidad de producto\n3. Ver lista de Productos\n4. Salir");
@@ -27,7 +28,6 @@ public class ArbolBinario {
                     if (raiz == null) {
                         System.out.println("El árbol está vacío.");
                     } else {
-                        Recorrido r = new Recorrido();
                         System.out.println("\n---------------Productos-------------\n");
                         r.preorden(raiz);
                         /*System.out.println("Inorden");
@@ -57,6 +57,9 @@ public class ArbolBinario {
             System.out.print("ID del producto:");
             id = decidir();
         } while (id < 100 || id > 999);
+        Recorrido r = new Recorrido();
+        r.añadirPiezas(raiz, id);
+        
         System.out.print("Nombre del producto: ");
         String nombre = scanner.nextLine();
         System.out.print("Piezas a añadir de" + nombre +  ": ");
@@ -75,7 +78,6 @@ public class ArbolBinario {
     }
 
     public void insertarNodo(Nodo nodo, Producto producto) {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("¿Enviar el producto a la izquierda (1) o a la derecha (2) del nodo con ID " + nodo.getDato().getId() + "?");
         int direccion = decidir();
         
